@@ -1,0 +1,25 @@
+package:
+  name: banyan
+  version: "0.1.5"
+
+source:
+  fn: Banyan-0.1.5.tar.gz
+  url: https://pypi.python.org/packages/source/B/Banyan/Banyan-0.1.5.tar.gz
+  md5: e11b452620c3ed8ce4ad9961a382626e
+
+requirements:
+  build:
+    - python
+
+  run:
+    - python
+
+test:
+  imports:
+    - banyan
+
+about:
+  home: http://pypi.python.org/pypi/banyan
+  license: BSD License
+  summary: 'Highly-optimized search trees (red-black, splay, and sorted-list) with optional augmentation (dynamic order statistics, interval trees, etc.)'
+

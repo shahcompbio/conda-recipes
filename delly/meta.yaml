@@ -1,0 +1,35 @@
+package:
+  name: delly
+  version: '0.7.2'
+
+source:
+  fn: delly_v0.7.2.tar.gz
+  url: https://github.com/tobiasrausch/delly/archive/v0.7.2.tar.gz
+
+requirements:
+  build:
+    - python
+    - htslib
+    - banyan
+    - pyvcf
+    - numpy
+
+  run:
+    - python
+    - htslib
+    - banyan
+    - pyvcf
+    - numpy
+
+build:
+  number: 1
+
+test:
+  commands:
+    - delly --help 2>&1 | grep delly
+    - dellySomaticFilter --help
+
+about:
+  home: https://github.com/tobiasrausch/delly
+  license: GPLv3
+  summary: Structural variant discovery by integrated paired-end and split-read analysis 

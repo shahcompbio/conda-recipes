@@ -1,0 +1,13 @@
+package:
+  name: boost_source
+  version: '1.60.0'
+
+source:
+  fn: boost_1_60_0.tar.gz
+  url: https://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.gz
+
+about:
+  home: http://www.boost.org
+  license: Boost Software License
+  summary: 'Source code only for boost c++'
+

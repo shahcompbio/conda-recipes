@@ -1,0 +1,12 @@
+package:
+  name: tclap
+  version: '1.2.1'
+
+source:
+  fn: tclap-1.2.1.tar.gz
+  url: https://sourceforge.net/projects/tclap/files/tclap-1.2.1.tar.gz
+
+about:
+  home: http://tclap.sourceforge.net
+  summary: 'Templatized C++ Command Line Parser Library'
+
