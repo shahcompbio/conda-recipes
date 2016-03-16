@@ -1,0 +1,43 @@
+package:
+  name: bioconductor-titan
+  version: 1.8.0
+source:
+  fn: TitanCNA_1.8.0.tar.gz
+  url: http://www.bioconductor.org/packages/release/bioc/src/contrib/TitanCNA_1.8.0.tar.gz
+build:
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-hmmcopy'
+    - 'bioconductor-iranges'
+    - 'bioconductor-rsamtools'
+    - 'bioconductor-genomeinfodb'
+    - 'r-foreach'
+    - 'r-argparse'
+    - 'r >=3.1.0'
+  run:
+    - 'bioconductor-hmmcopy'
+    - 'bioconductor-iranges'
+    - 'bioconductor-rsamtools'
+    - 'bioconductor-genomeinfodb'
+    - 'r-foreach'
+    - 'r-argparse'
+    - 'r >=3.1.0'
+    - python
+    - perl
+    - numpy
+    - pandas
+test:
+  commands:
+    - '$R -e "library(''TitanCNA'')"'
+    - 'createTITANsegmentfiles.pl -h'
+    - 'parse_titan_segments.py -h'
+    - 'run_titan.R -h | grep usage'
+about:
+  home: http://bioconductor.org/packages/HMMcopy/
+  summary: 'Corrects GC and mappability biases for readcounts (i.e. coverage) in non-overlapping windows of fixed length
+    for single whole genome samples, yielding a rough estimate of copy number for furthur analysis. Designed for rapid
+    correction of high coverage whole genome tumour and normal samples.'
