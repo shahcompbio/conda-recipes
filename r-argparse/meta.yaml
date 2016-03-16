@@ -1,0 +1,34 @@
+package:
+  name: r-argparse
+  version: "1.0.1"
+source:
+  fn: argparse_1.0.1.tar.gz
+  url:
+    - http://cran.r-project.org/src/contrib/argparse_1.0.1.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/argparse/argparse_1.0.1.tar.gz
+build:
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r
+    - r-findpython
+    - r-getopt >=1.19
+    - r-proto
+    - r-rjson
+  run:
+    - r
+    - r-findpython
+    - r-getopt >=1.19
+    - r-proto
+    - r-rjson
+test:
+  commands:
+    - $R -e "library('argparse')" # [not win]
+    - "\"%R%\" -e \"library('argparse')\"" # [win]
+about:
+  home: https://github.com/trevorld/argparse
+  license: GPL (>= 2)
+  summary: A command line parser to be used with Rscript to write "#!" shebang scripts that gracefully
+    accept positional and optional arguments and automatically generate usage.

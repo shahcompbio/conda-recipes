@@ -1,0 +1,25 @@
+package:
+  name: r-findpython
+  version: "1.0.1"
+source:
+  fn: findpython_1.0.1.tar.gz
+  url:
+    - http://cran.r-project.org/src/contrib/findpython_1.0.1.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/findpython/findpython_1.0.1.tar.gz
+build:
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r
+  run:
+    - r
+test:
+  commands:
+    - $R -e "library('findpython')" # [not win]
+    - "\"%R%\" -e \"library('findpython')\"" # [win]
+about:
+  home: https://github.com/trevorld/findpython
+  license: MIT + file LICENSE
+  summary: Package designed to find an acceptable python binary.
