@@ -1,0 +1,28 @@
+package:
+  name: clonehd
+  version: '1.17.8'
+
+source:
+  git_url: https://github.com/andrej-fischer/cloneHD.git
+  git_rev: v1.17.8
+
+requirements:
+  build:
+    - gsl
+  run:
+    - gsl
+
+
+build:
+  number: 1
+
+test:
+  commands:
+    - cloneHD 2>&1 | grep One
+    - filterHD 2>&1 | grep choose
+    - pre-filter 2>&1 | grep Either
+
+about:
+  home: https://github.com/andrej-fischer/cloneHD
+  license: GPLv3
+  summary: High-definition reconstruction of clonal composition from next-generation sequencing data
