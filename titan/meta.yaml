@@ -5,7 +5,7 @@ source:
   fn: TitanCNA_1.8.0.tar.gz
   url: http://www.bioconductor.org/packages/release/bioc/src/contrib/TitanCNA_1.8.0.tar.gz
 build:
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -17,6 +17,7 @@ requirements:
     - 'bioconductor-genomeinfodb'
     - 'r-foreach'
     - 'r-argparse'
+    - 'r-domc'
     - 'r >=3.1.0'
   run:
     - 'bioconductor-hmmcopy'
@@ -25,6 +26,7 @@ requirements:
     - 'bioconductor-genomeinfodb'
     - 'r-foreach'
     - 'r-argparse'
+    - 'r-domc'
     - 'r >=3.1.0'
     - python
     - perl

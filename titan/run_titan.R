@@ -87,6 +87,12 @@ run.titan <- function(args)
 						   map=mScore, 
 						   mapThres=0.9)
 	}
+	else {
+		data <- filterData(data, 
+						   args$chromosomes, 
+						   minDepth=args$min_depth, 
+						   maxDepth=args$max_depth)
+	}
 
 	# adjust the heterozygous to account for noise if symmetric genotypes
 	if (args$symmetric){
