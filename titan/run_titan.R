@@ -53,7 +53,7 @@ run.titan <- function(args)
 {
 	library(TitanCNA)
 	
-	data <- loadAlleleCounts(args$counts_file)
+	data <- loadAlleleCounts(args$counts_file, genomeStyle=args$genome_style)
 
 	params <- loadDefaultParameters(data=data, copyNumber=args$max_copy_number, numberClonalClusters=args$num_clusters)
 	
@@ -66,7 +66,7 @@ run.titan <- function(args)
 	}
 	else {
 	    message("GC and mappability correction disabled")
-		depth.data <- calcReadDepth(args$tumour_wig_file, args$normal_wig_file)
+		depth.data <- calcReadDepth(args$tumour_wig_file, args$normal_wig_file, genomeStyle=args$genome_style)
 	}
 	
 	logR <- getPositionOverlap(data$chr, data$posn, depth.data)
@@ -76,7 +76,13 @@ run.titan <- function(args)
 	rm(logR, depth.data)
 	
 	if (args$map_wig_file != '') {
-		mScore <- as.data.frame(wigToRangedData(args$map_wig_file))
+		map.data = wigToRangedData(args$map_wig_file)
+		
+		if (seqlevelsStyle(names(map.data)) != args$genome_style){
+			names(map.data) <- mapSeqlevels(names(map.data), args$genome_style)
+		}
+
+		mScore <- as.data.frame(map.data)
 		
 		mScore <- getPositionOverlap(data$chr, data$posn, mScore[,-4])
 		
@@ -216,6 +222,9 @@ parser$add_argument('--symmetric', default=TRUE, action='store_true',
 parser$add_argument('--use_outlier_state', default=FALSE, action='store_true',
 					help='If set an additional emission state will be added for outliers.')				
 			
+parser$add_argument('--genome_style', default='NCBI', type='character',
+					help='Chromosome names as NCBI or UCSC.')
+
 args <- parser$parse_args()
 
 library(doMC)
