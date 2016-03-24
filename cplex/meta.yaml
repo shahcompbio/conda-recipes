@@ -1,0 +1,12 @@
+package:
+  name: cplex
+  version: '1.60.0'
+
+source:
+  path: src
+
+about:
+  home: http://www-03.ibm.com/software/products/en/ibmilogcpleoptistud
+  license: IBM
+  summary: 'CPLEX optimization studio'
+
