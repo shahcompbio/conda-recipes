@@ -3,8 +3,19 @@ package:
   version: '2.r837'
 
 source:
-  fn: shapeit.v2.r837.GLIBCv2.12.Linux.static.tgz
-  url: https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.v2.r837.GLIBCv2.12.Linux.static.tgz
+  fn: shapeit.v2.r837.GLIBCv2.12.Linux.static.tgz                                                                  # [linux]
+  url: https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.v2.r837.GLIBCv2.12.Linux.static.tgz        # [linux]
+  fn: shapeit.v2.r837.MacOSX.tgz                                                                                   # [osx]
+  url: https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.v2.r837.MacOSX.tgz                         # [osx]
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - 'boost_lib'
+  run:
+    - 'boost_lib'
 
 about:
   home: https://mathgen.stats.ox.ac.uk/genetics_software/shapeit/shapeit.html
