@@ -19,6 +19,7 @@ requirements:
     - 'r-argparse'
     - 'r-domc'
     - 'r >=3.1.0'
+    - perl >=5.22.0
   run:
     - 'bioconductor-hmmcopy'
     - 'bioconductor-iranges'
@@ -29,13 +30,13 @@ requirements:
     - 'r-domc'
     - 'r >=3.1.0'
     - python
-    - perl
+    - perl >=5.22.0
     - numpy
     - pandas
 test:
   commands:
     - '$R -e "library(''TitanCNA'')"'
-    - 'createTITANsegmentfiles.pl -h'
+    - 'createTITANsegmentfiles.pl -h | cat'
     - 'parse_titan_segments.py -h'
     - 'run_titan.R -h | grep usage'
 about:
