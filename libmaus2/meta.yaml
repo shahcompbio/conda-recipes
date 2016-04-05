@@ -1,0 +1,15 @@
+package:
+  name: libmaus2
+  version: '2.0.151'
+
+source:
+  git_url: git@github.com:gt1/libmaus2.git
+  git_rev: 2.0.151-release-20160405111637
+
+requirements:
+  build:
+    - boost_lib
+
+about:
+  home: https://github.com/gt1/libmaus2
+  summary: collection of data structures and algorithms
