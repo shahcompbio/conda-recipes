@@ -1,5 +1,5 @@
 package:
-  name: delly
+  name: delly_utils
   version: '0.7.2'
 
 source:
@@ -8,19 +8,23 @@ source:
 
 requirements:
   build:
-    - boost_lib
-    - htslib
+    - python
+    - banyan
+    - pyvcf
+    - numpy
 
   run:
-    - boost_lib
-    - htslib
+    - python
+    - banyan
+    - pyvcf
+    - numpy
 
 build:
   number: 1
 
 test:
   commands:
-    - delly --help 2>&1 | grep delly
+    - dellySomaticFilter --help
 
 about:
   home: https://github.com/tobiasrausch/delly
