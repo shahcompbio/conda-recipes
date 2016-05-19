@@ -26,7 +26,17 @@ else ifeq (${DEBUG}, 2)
 	CXXFLAGS += -g -O0 -fno-inline -DPROFILE
 	LDFLAGS += -lprofiler -ltcmalloc
 else
-	CXXFLAGS += -O3 -funroll-loops --fast-math -DNDEBUG
+	CXXFLAGS += -O3 -funroll-loops -DNDEBUG
+endif
+
+UNAME := $(shell uname)
+
+ifeq ($(UNAME), Darwin)
+CXXFLAGS += -stdlib=libc++ -mmacosx-version-min=10.7
+endif
+
+ifneq ($(UNAME), Darwin)
+CXXFLAGS += --fast-math
 endif
 
 # Delly sources

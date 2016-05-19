@@ -3,11 +3,16 @@ package:
   version: '0.7.3'
 
 source:
-  fn: delly
-  url: https://github.com/tobiasrausch/delly/releases/download/v0.7.3/delly_v0.7.3_linux_x86_64bit
+  git_url: https://github.com/amcpherson/delly.git
+  git_rev: v0.7.3
 
 build:
   number: 1
+
+requirements:
+  build:
+    - boost_lib
+    - htslib
 
 test:
   commands:
