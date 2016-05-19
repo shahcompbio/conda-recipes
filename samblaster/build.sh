@@ -3,4 +3,5 @@
 mkdir -p $PREFIX/bin
 
 make
-cp bin/* $PREFIX/bin/
+cp samblaster $PREFIX/bin/samblaster
+

@@ -1,0 +1,22 @@
+package:
+  name: samblaster
+  version: '0.1.22'
+
+source:
+  git_url: https://github.com/GregoryFaust/samblaster.git
+  git_rev: v.0.1.22
+
+build:
+  number: 1
+
+requirements:
+  build:
+
+test:
+  commands:
+    - samblaster -h
+
+about:
+  home: https://github.com/GregoryFaust/samblaster
+  license: MIT
+  summary: A tool to mark duplicates and extract discordant and split reads from sam files.
