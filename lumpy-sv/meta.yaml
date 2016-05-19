@@ -7,16 +7,21 @@ source:
   git_rev: '0.2.13'
 
 build:
-  number: 1
+  number: 3
 
 requirements:
   run:
-    - 'samblaster'
+    - samblaster
+    - python
+    - gawk
+    - pysam
+    - numpy
 
 test:
   commands:
     - lumpy 2>&1 | grep Usage
     - lumpyexpress 2>&1 | grep usage
+    - lumpy_extractSplitReads_BwaMem 2>&1 | grep Usage
 
 about:
   home: https://github.com/arq5x/lumpy-sv
