@@ -1,7 +1,6 @@
 #!/bin/bash
 
 mkdir -p $PREFIX/bin
-mkdir -p $PREFIX/bin
 
 export INCLUDE_PATH=$PREFIX/include
 export C_INCLUDE_PATH=$PREFIX/include
