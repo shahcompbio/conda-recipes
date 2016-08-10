@@ -1,5 +1,5 @@
 package:
-  name: biobambam2
+  name: biobambam
   version: '2.0.30'
 
 source:
@@ -8,7 +8,8 @@ source:
 
 requirements:
   build:
-    - libmaus2
+    - boost_lib
+    - libmaus
     - pkg-config
   run:
 

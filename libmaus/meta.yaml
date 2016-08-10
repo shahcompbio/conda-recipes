@@ -1,5 +1,5 @@
 package:
-  name: libmaus2
+  name: libmaus
   version: '2.0.151'
 
 source:

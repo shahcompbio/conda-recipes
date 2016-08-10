@@ -1,0 +1,17 @@
+package:
+  name: bicseq2-seg
+  version: '0.7.2'
+
+source:
+  url: http://www.math.pku.edu.cn/teachers/xirb/downloads/software/BICseq2/BICseq2/NBICseq-seg_v0.7.2.tar.gz
+  fn: NBICseq-seg_v0.7.2.tar.gz
+
+requirements:
+  build:
+  run:
+
+test:
+  commands:
+
+about:
+  home: http://www.math.pku.edu.cn/teachers/xirb/downloads/software/BICseq2/BICseq2.html
