@@ -6,6 +6,9 @@ source:
   url: http://www.math.pku.edu.cn/teachers/xirb/downloads/software/BICseq2/BICseq2/NBICseq-norm_v0.2.4.tar.gz
   fn: NBICseq-norm_v0.2.4.tar.gz
 
+build:
+  number: 2
+
 requirements:
   build:
   run:
