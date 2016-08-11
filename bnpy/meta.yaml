@@ -3,9 +3,8 @@ package:
   version: '8019474'
 
 source:
-  path: /Users/amcpherson/Projects/bnpy-dev/
-  # git_url: https://bitbucket.org/dranew/bnpy-dev.git
-  # git_rev: 8019474
+  git_url: https://bitbucket.org/dranew/bnpy-dev.git
+  git_rev: 1a3a01a6ce2dc0df540cd1531c0d01e5cc57a1bd
 
 requirements:
   build:
