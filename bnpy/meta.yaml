@@ -1,0 +1,26 @@
+package:
+  name: bnpy
+  version: '8019474'
+
+source:
+  path: /Users/amcpherson/Projects/bnpy-dev/
+  # git_url: https://bitbucket.org/dranew/bnpy-dev.git
+  # git_rev: 8019474
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - numpy
+    - scipy
+
+build:
+  number: 1
+
+test:
+  commands:
+
+about:
+  home: https://bitbucket.org/michaelchughes/bnpy-dev/
+  summary: Bayesian nonparametric machine learning for python.
