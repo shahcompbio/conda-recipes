@@ -1,6 +1,7 @@
 #!/bin/bash
 
-make
+make all MBICseq
+
 mkdir -p $PREFIX/src/bicseq2-seg/
 cp -R * $PREFIX/src/bicseq2-seg/
 
