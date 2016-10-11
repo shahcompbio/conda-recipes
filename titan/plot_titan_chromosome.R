@@ -2,7 +2,7 @@
 
 plot.titan.chromosome <- function(args)
 {
-	library(TitanCNA)
+  library(TitanCNA)
   
   params = read.table(args$param_file, header=F, row.names=1, sep='\t', colClasses='character')
   results = read.table(args$cn_file, header=T)
