@@ -25,3 +25,7 @@ chmod a+x $PREFIX/bin/parse_titan_segments.py
 
 cp $RECIPE_DIR/run_titan.R $PREFIX/bin
 chmod a+x $PREFIX/bin/run_titan.R
+
+cp $RECIPE_DIR/plot_titan_chromosome.R $PREFIX/bin
+chmod a+x $PREFIX/bin/plot_titan_chromosome.R
+
