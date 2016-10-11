@@ -39,6 +39,7 @@ test:
     - 'createTITANsegmentfiles.pl -h | cat'
     - 'parse_titan_segments.py -h'
     - 'run_titan.R -h | grep usage'
+    - 'plot_titan_chromosome.R -h | grep usage'
 about:
   home: http://bioconductor.org/packages/HMMcopy/
   summary: 'Corrects GC and mappability biases for readcounts (i.e. coverage) in non-overlapping windows of fixed length
