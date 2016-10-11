@@ -1,11 +1,11 @@
 package:
   name: bioconductor-titan
-  version: 1.8.0
+  version: 1.10.0
 source:
-  fn: TitanCNA_1.8.0.tar.gz
-  url: http://www.bioconductor.org/packages/release/bioc/src/contrib/TitanCNA_1.8.0.tar.gz
+  fn: TitanCNA_1.10.0.tar.gz
+  url: http://www.bioconductor.org/packages/release/bioc/src/contrib/TitanCNA_1.10.0.tar.gz
 build:
-  number: 3
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
