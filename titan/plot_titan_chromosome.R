@@ -15,7 +15,7 @@ plot.titan.chromosome <- function(args)
   
   plot.title = paste('Chromosome', args$chromosome)
   
-  plotCNlogRByChr(results, args$chromosome, ploidy=ploidy, geneAnnot=NULL, spacing=4, ylim=c(-4,6), cex=0.5, main=plot.title)
+  plotCNlogRByChr(results, args$chromosome, normal=norm, ploidy=ploidy, geneAnnot=NULL, spacing=4, ylim=c(-4,6), cex=0.5, main=plot.title)
   plotAllelicRatio(results, args$chromosome, geneAnnot=NULL, spacing=4, ylim=c(0,1), cex=0.5, main=plot.title)
   plotClonalFrequency(results, args$chromosome, normal=norm, geneAnnot=NULL, spacing=4, ylim=c(0,1), cex=0.5, main=plot.title)
 
