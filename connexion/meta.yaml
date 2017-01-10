@@ -1,0 +1,87 @@
+package:
+  name: connexion
+  version: "1.1.1"
+
+source:
+  fn: connexion-1.1.1.tar.gz
+  url: https://pypi.python.org/packages/21/8b/7be45e393278187f864bb68b1b7f68cad7ae6d0fb9b3bf21a18d608a11da/connexion-1.1.1.tar.gz
+  md5: f5eae0fed22b38cabd550cae29774e29
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - connexion = connexion:main
+    #
+    # Would create an entry point called connexion that calls connexion.main()
+
+    - connexion = connexion.cli:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - clickclick >=1.2
+    - flask >=0.10.1
+    - jsonschema >=2.5.1
+    - pyyaml >=3.11
+    - requests >=2.9.1
+    - six >=1.9
+    - strict-rfc3339 >=0.6
+    - swagger-spec-validator >=2.0.2
+    - pathlib >=1.0.1
+
+  run:
+    - python
+    - clickclick >=1.2
+    - flask >=0.10.1
+    - jsonschema >=2.5.1
+    - pyyaml >=3.11
+    - requests >=2.9.1
+    - six >=1.9
+    - strict-rfc3339 >=0.6
+    - swagger-spec-validator >=2.0.2
+    - pathlib >=1.0.1
+
+test:
+  # Python imports
+  imports:
+    - connexion
+    - connexion.decorators
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    - connexion --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - decorator
+    - mock
+    - pytest
+    - pytest-cov
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/zalando/connexion
+  license: Apache License Version 2.0
+  summary: 'Connexion - API first applications with OpenAPI/Swagger and Flask'
+  license_family: APACHE
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
