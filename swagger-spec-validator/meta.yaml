@@ -1,5 +1,5 @@
 package:
-  name: swagger_spec_validator
+  name: swagger-spec-validator
   version: '2.0.2'
 
 source:

@@ -8,10 +8,18 @@ source:
 
 requirements:
   build:
-    - python3
+    - python >=3.5
+    - pyvcf
+    - requests
+    - pyyaml
+    - connexion
   run:
-    - python3
+    - python >=3.5
     - numpy
+    - pyvcf
+    - requests
+    - pyyaml
+    - connexion
 
 build:
   number: 1

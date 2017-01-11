@@ -80,7 +80,7 @@ about:
   home: https://github.com/zalando/connexion
   license: Apache License Version 2.0
   summary: 'Connexion - API first applications with OpenAPI/Swagger and Flask'
-  license_family: APACHE
+  license_family: Apache
 
 # See
 # http://docs.continuum.io/conda/build.html for
