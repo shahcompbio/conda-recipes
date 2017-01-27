@@ -1,0 +1,32 @@
+package:
+  name: pvacseq
+  version: 4.0.5
+
+source:
+  git_url: https://github.com/griffithlab/pVAC-Seq
+  git_rev: v4.0.5
+
+requirements:
+  build:
+    - python >=3.5
+    - pyvcf
+    - requests
+    - pyyaml
+    - connexion
+  run:
+    - python >=3.5
+    - numpy
+    - pyvcf
+    - requests
+    - pyyaml
+    - connexion
+
+build:
+  number: 1
+
+test:
+  commands:
+
+about:
+  home: https://github.com/griffithlab/pVAC-Seq
+  summary: A cancer immunotherapy pipeline

@@ -1,0 +1,33 @@
+package:
+  name: swagger-spec-validator
+  version: '2.0.2'
+
+source:
+  fn: swagger_spec_validator-2.0.2.tar.gz
+  md5: 67d5dfa6bb98d36c3c7cc888c16601e2
+  url: https://pypi.python.org/packages/98/79/b3243192c42cf3ce983e76f2bf38b3dc343f594f35dec6ec3793055f50b8/swagger_spec_validator-2.0.2.tar.gz
+
+requirements:
+  build:
+    - python
+    - jsonschema
+    - setuptools
+    - six
+    - certifi
+  run:
+    - python
+    - jsonschema
+    - setuptools
+    - six
+    - certifi
+
+build:
+  number: 1
+
+test:
+  commands:
+
+about:
+  home: https://github.com/Yelp/swagger_spec_validator
+  summary: Swagger Spec Validator is a Python library that validates Swagger Specs against the Swagger 1.2 or Swagger 2.0 specification. The validator aims to check for full compliance with the Specification.
+
