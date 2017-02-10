@@ -1,0 +1,26 @@
+package:
+  name: r-ascat
+  version: v2.4.3
+source:
+  git_url: https://github.com/Crick-CancerGenomics/ascat.git
+  git_rev:  v2.4.3
+build:
+  number: 1
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'r >=3.1.0'
+    - 'r-rcolorbrewer'
+    # - 'bioconductor-graphics'
+    # - 'bioconductor-utils'
+  run:
+    - 'r >=3.1.0'
+    - 'r-rcolorbrewer'
+test:
+  commands:
+    - '$R -e "library(''ASCAT'')"'
+about:
+  home: https://github.com/Crick-CancerGenomics/ascat
+  summary: 'ASCAT copy number R package'
