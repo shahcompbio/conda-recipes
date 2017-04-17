@@ -1,0 +1,23 @@
+package:
+  name: spruce
+  version: '607e0c4d'
+
+source:
+  git_url: https://github.com/raphael-group/spruce.git
+  git_rev: 607e0c4d
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - cmake
+    - boost_lib
+    - lemon
+
+test:
+  commands:
+
+about:
+  home: https://github.com/raphael-group/spruce.git
+  summary: 'SPRUCE: Somatic Phylogeny Reconstruction using Combinatorial Enumeration'
