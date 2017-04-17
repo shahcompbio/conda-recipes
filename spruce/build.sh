@@ -4,6 +4,10 @@ export BOOST_ROOT=${PREFIX}/include/
 export CPLUS_INCLUDE_PATH=${PREFIX}/lemon/include/
 export LIBRARY_PATH=${PREFIX}/lemon/lib/
 
+if [ `uname` == Linux ]; then
+export LDFLAGS='-lrt'
+fi
+
 mkdir build
 cd build
 cmake -DCMAKE_OSX_DEPLOYMENT_TARGET=10.9 ..
