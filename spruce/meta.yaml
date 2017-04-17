@@ -14,6 +14,7 @@ requirements:
     - cmake
     - boost_lib
     - lemon
+    - llvm       # [osx]
 
 test:
   commands:
