@@ -1,0 +1,19 @@
+package:
+  name: lichee
+  version: "1.0"
+
+source:
+  git_url: https://github.com/viq854/lichee.git
+  git_rev: v1.0
+
+build:
+  number: 0
+
+requirements:
+  run:
+    - java-jdk >=8
+
+about:
+  home: https://github.com/viq854/lichee
+  license: MIT License
+  summary: Multi-sample cancer phylogeny reconstruction
