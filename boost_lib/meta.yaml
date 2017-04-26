@@ -1,10 +1,10 @@
 package:
   name: boost_lib
-  version: '1.60.0'
+  version: '1.63.0'
 
 source:
-  fn: boost_1_60_0.tar.gz
-  url: https://sourceforge.net/projects/boost/files/boost/1.60.0/boost_1_60_0.tar.gz
+  fn: boost_1_63_0.tar.gz
+  url: https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.tar.gz
 
 requirements:
   build:
