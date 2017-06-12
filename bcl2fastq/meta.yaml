@@ -9,6 +9,7 @@ build:
   number: 1
 requirements:
   build:
+    - zlib
   run:
 test:
   commands:

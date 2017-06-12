@@ -4,6 +4,9 @@
 # export CPPFLAGS="-I${PREFIX}/include/"
 # export LDFLAGS="-L${PREFIX}/lib/"
 
-./configure --prefix=$PREFIX
+mkdir build
+cd build
+./build/src/configure --prefix=$PREFIX
+
 make
 make install
