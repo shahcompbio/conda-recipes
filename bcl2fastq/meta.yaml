@@ -1,0 +1,20 @@
+
+package:
+  name: bcl2fastq
+  version: 2.19.0
+source:
+  fn: bcl2fastq2-v2.19.0.tar.gz
+  url: http://support.illumina.com/content/dam/illumina-support/documents/downloads/software/bcl2fastq/bcl2fastq2-v2.19.0.tar.gz
+build:
+  number: 1
+requirements:
+  build:
+  run:
+test:
+  commands:
+    - 'bcl2fastq -h'
+about:
+  home: https://support.illumina.com/sequencing/sequencing_software/bcl2fastq-conversion-software.html
+  summary: 'bcl2fastq Conversion Software both demultiplexes data and converts BCL files generated
+    by Illumina sequencing systems to standard FASTQ file formats for downstream analysis.'
+
