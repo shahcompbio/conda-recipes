@@ -4,9 +4,12 @@
 # export CPPFLAGS="-I${PREFIX}/include/"
 # export LDFLAGS="-L${PREFIX}/lib/"
 
+CC=${PREFIX}/bin/gcc
+CXX=${PREFIX}/bin/g++
+
 mkdir build
 cd build
-./build/src/configure --prefix=$PREFIX
+../src/configure --prefix=$PREFIX
 
 make
 make install

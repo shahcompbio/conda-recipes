@@ -9,8 +9,14 @@ build:
   number: 1
 requirements:
   build:
+    - cmake
+    - gcc
     - zlib
+    - boost_lib ==1.54.0
   run:
+    - libgcc
+    - zlib
+    - boost_lib ==1.54.0
 test:
   commands:
     - 'bcl2fastq -h'

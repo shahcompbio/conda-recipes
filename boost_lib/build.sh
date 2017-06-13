@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export CFLAGS="-I${PREFIX}/include/"
+export CPPFLAGS="-I${PREFIX}/include/"
+export LDFLAGS="-L${PREFIX}/lib/"
+
 ./bootstrap.sh --prefix=${PREFIX}
 
 if [ `uname` == Darwin ]; then
@@ -10,5 +14,5 @@ if [ `uname` == Darwin ]; then
 else
 ./b2 --prefix=${PREFIX} --build-type=minimal \
     --layout=system variant=release link=static,shared \
-    threading=multi install
+    threading=multi cxxflags=$CPPFLAGS linkflags=$LDFLAGS install
 fi
