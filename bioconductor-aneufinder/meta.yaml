@@ -14,6 +14,7 @@ build:
     - lib/
 requirements:
   build:
+    - bioconductor-aneufinderdata
     - bioconductor-bamsignals
     - bioconductor-biocgenerics
     - bioconductor-biostrings
@@ -37,6 +38,7 @@ requirements:
     - r-reordercluster
     - r-reshape2
   run:
+    - bioconductor-aneufinderdata
     - bioconductor-bamsignals
     - bioconductor-biocgenerics
     - bioconductor-biostrings
