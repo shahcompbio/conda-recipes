@@ -1,0 +1,26 @@
+package:
+  name: museqportrait
+  version: 0.99.12
+
+source:
+  git_rev: version_0.99.12
+  git_url: https://svn.bcgsc.ca/bitbucket/scm/museq/museqportrait.git
+
+requirements:
+  host:
+    - python
+    - setuptools
+  run:
+    - python
+    - numpy
+    - scipy
+    - matplotlib
+
+test:
+  imports:
+    - museqportrait
+
+about:
+  home: http://www.shahlab.ca
+  license:
+  license_file:
