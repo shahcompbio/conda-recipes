@@ -5,19 +5,17 @@ source:
   git_url: https://github.com/Crick-CancerGenomics/ascat.git
   git_rev:  v2.4.3
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
 requirements:
-  build:
-    - 'r >=3.1.0'
-    - 'r-rcolorbrewer'
-    # - 'bioconductor-graphics'
-    # - 'bioconductor-utils'
+  host:
+    - r-base >=3.1.0
+    - r-rcolorbrewer
   run:
-    - 'r >=3.1.0'
-    - 'r-rcolorbrewer'
+    - r >=3.1.0
+    - r-rcolorbrewer
 test:
   commands:
     - '$R -e "library(''ASCAT'')"'
