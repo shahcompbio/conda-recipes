@@ -1,0 +1,31 @@
+package:
+  name: lumpy-sv
+  version: '0.2.12'
+
+source:
+  git_url: https://github.com/arq5x/lumpy-sv.git
+  git_rev: '0.2.12'
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - zlib
+  run:
+    - zlib
+    - samblaster
+    - python=2
+    - gawk
+    - pysam
+    - numpy
+
+test:
+  commands:
+    - lumpy 2>&1 | grep Usage
+    - lumpyexpress 2>&1 | grep usage
+    - lumpy_extractSplitReads_BwaMem 2>&1 | grep Usage
+
+about:
+  home: https://github.com/arq5x/lumpy-sv
+  license: GPLv3
+  summary: A general probabilistic framework for structural variant discovery
