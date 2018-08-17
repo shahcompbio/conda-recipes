@@ -1,0 +1,29 @@
+package:
+  name: vizutils
+  version: 1.1.0
+
+source:
+  git_rev: add-parsers
+  #git_url: https://svn.bcgsc.ca/bitbucket/scm/~dgrewal/vizutils.git
+  git_url: /home/tyler/projects/pypelines/tools/vizutils
+
+requirements:
+  host:
+    - python
+    - setuptools
+  run:
+    - python
+    - numpy
+    - intervaltree
+    - pandas
+    - matplotlib
+
+test:
+  commands:
+    - vizutils_parse_museq --help
+    - vizutils_parse_strelka --help
+    - vizutils_parse_destruct --help
+    - vizutils_parse_lumpy --help
+
+about:
+  home: https://svn.bcgsc.ca/bitbucket/scm/~dgrewal/vizutils
