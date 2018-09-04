@@ -1,13 +1,13 @@
 package:
   name: vizutils
-  version: 1.2
+  version: 1.2.1
 
 source:
   git_rev: master
   git_url: https://svn.bcgsc.ca/bitbucket/scm/~dgrewal/vizutils.git
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   host:
