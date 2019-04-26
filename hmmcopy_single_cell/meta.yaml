@@ -1,0 +1,30 @@
+package:
+  name: bioconductor-hmmcopy-single-cell
+  version: 1.12.0
+source:
+  fn: HMMcopy_1.12.0.tar.gz
+  url: http://master.bioconductor.org/packages/3.2/bioc/src/contrib/HMMcopy_1.12.0.tar.gz
+build:
+  number: 1
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'bioconductor-geneplotter'
+    - 'bioconductor-iranges'
+    - 'r >=3.1.0'
+  run:
+    - 'hmmcopy_utils'
+    - 'bioconductor-geneplotter'
+    - 'bioconductor-iranges'
+    - 'r >=3.1.0'
+test:
+  commands:
+    - '$R -e "library(''HMMcopy'')"'
+about:
+  home: http://bioconductor.org/packages/HMMcopy/
+  summary: 'Corrects GC and mappability biases for readcounts (i.e. coverage) in non-overlapping windows of fixed length
+    for single whole genome samples, yielding a rough estimate of copy number for furthur analysis. Designed for rapid
+    correction of high coverage whole genome tumour and normal samples.'
+
