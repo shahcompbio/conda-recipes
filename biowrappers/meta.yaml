@@ -1,0 +1,24 @@
+package:
+  name: biowrappers
+  version: 0.1.1
+
+source:
+  git_rev: singlecell
+  git_url: https://dgrewal@bitbucket.org/aroth85/biowrappers.git
+
+build:
+  number: 0
+
+requirements:
+  host:
+    - python
+    - setuptools
+  run:
+    - pypeliner
+
+test:
+  commands:
+    - python -c "import biowrappers"
+
+about:
+  home: https://bitbucket.org/aroth85/biowrappers/src/dev/
