@@ -1,0 +1,40 @@
+package:
+  name: corrupt-tree
+  version: 0.0.1
+source:
+  - git_url: https://github.com/UBC-Stat-ML/nowellpack.git
+    git_rev: 83f19ba243d6916fa6dbac0bb507eca25fd8de6a
+    folder: nowellpack
+build:
+  number: 1
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'r >=3.1.0'
+    - java-jdk
+  run:
+    - r
+    - r-data.table
+    - r-tidyr
+    - r-optparse
+    - r-dplyr
+    - r-r.utils
+    - r-reshape2
+    - r-ggplot2
+    - r-stringr
+    - java-jdk
+test:
+  commands:
+    - python -c "import os"
+#    - corrupt-straighten
+#    - corrupt-filter
+#    - corrupt-infer-with-noisy-params
+#    - corrupt-l1-decode
+#    - error_rates_viz.R
+#    - logd.R
+#    - corrupt-average
+about:
+  home: https://github.com/UBC-Stat-ML/nowellpack
+  summary: 'tree for single cell dna'
