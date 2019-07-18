@@ -1,9 +1,9 @@
 package:
   name: museqportrait
-  version: 0.99.12
+  version: 0.99.13
 
 source:
-  git_rev: version_0.99.12
+  git_rev: version_0.99.13
   git_url: https://svn.bcgsc.ca/bitbucket/scm/museq/museqportrait.git
 
 requirements:
