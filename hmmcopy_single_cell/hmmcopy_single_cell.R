@@ -8,6 +8,15 @@ suppressPackageStartupMessages(library("HMMcopy"))
 suppressPackageStartupMessages(library("plyr"))
 options(error=traceback)
 
+stack_params <- function(data, paramname) {
+        data = data.frame(data)
+        colnames(data) = 1:length(data) - 1
+        data$state = as.numeric(row.names(data)) - 1
+        data = melt(data, id.vars='state', value.name='value', variable.name='iteration')
+        data$parameter = paramname
+        return(data)
+}
+
 format_parameter_table <- function(samp.segmented, new.params) {
         # mus - state medians
         # lambdas - state precision (inverse variance)
@@ -16,56 +25,20 @@ format_parameter_table <- function(samp.segmented, new.params) {
 
         num_iter <- ncol(samp.segmented$mus)
 
-        df.params <- data.frame()
+        loglik = stack_params(t(samp.segmented$loglik), 'loglik')
+        loglik$state = NaN
 
-        state_params <- c("mus", "lambdas")
+        nus = stack_params(new.params$nu, 'nus')
+        nus$iteration = NaN
 
-        for (i in 1:length(state_params)) {
-                df.param <- data.frame(samp.segmented[[state_params[i]]])
-                colnames(df.param)[1] <- "initial"
-                colnames(df.param)[2:ncol(df.param)] <- c(1:(ncol(df.param)-1))
-                colnames(df.param)[ncol(df.param)] <- "final"
-
-                if (nrow(df.param) > 1) {
-                        df.param$state <- c(1:nrow(df.param))
-                } else {
-                        df.param$state <- NA
-                }
-
-                df.param$parameter <- state_params[i]
-
-                df.params <- rbind(df.params, df.param)
-        }
-        df.pi <- data.frame(matrix(nrow=length(samp.segmented$pi), ncol=ncol(df.params)))
-        df.pi[,ncol(df.params)-2] <- samp.segmented$pi
-        df.pi[,ncol(df.params)-1] <- c(1:nrow(df.pi))
-        df.pi[,ncol(df.params)] <- "pi"
-        colnames(df.pi) <- colnames(df.params)
-        df.params <- rbind(df.params, df.pi)
-
-        df.loglik <- data.frame(t(samp.segmented$loglik))
-        colnames(df.loglik)[1] <- "initial"
-        colnames(df.loglik)[2:ncol(df.loglik)] <- c(1:(ncol(df.loglik)-1))
-        colnames(df.loglik)[ncol(df.loglik)] <- "final"
-        df.loglik$state <- NA
-        df.loglik$parameter <- "loglik"
-        df.params <- rbind(df.params, df.loglik)
-
-        nus <- data.frame(matrix(ncol = ncol(df.params), nrow=nrow(new.params)))
-        colnames(nus) <- colnames(df.params)
-        nus$final <- new.params$nu
-        nus$parameter <- "nus"
-        nus$state <- rownames(new.params)
-        df.params <- rbind(df.params, nus)
-
-        df.params$state <- as.numeric(df.params$state)
-        df.params$state <- df.params$state -1
+        df.params = rbind(
+                stack_params(samp.segmented$mus, 'mus'),
+                stack_params(samp.segmented$lambdas, 'lambdas'),
+                stack_params(samp.segmented$pi, 'pi'),
+                loglik, nus)
 
         return(df.params)
-
 }
-
-
 
 error_exit_clean <- function(samp.uncorrected, chromosomes, sample_id, out_reads, out_segs, out_params, out_metrics, multiplier, error) {
 
