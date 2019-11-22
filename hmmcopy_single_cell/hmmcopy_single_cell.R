@@ -68,7 +68,7 @@ error_exit_clean <- function(samp.uncorrected, chromosomes, sample_id, out_reads
         segs <- "chr,start,end,state,median,multiplier,cell_id\n"
         cat(segs, file=out_segs)
 
-        params <- "initial,1,2,3,4,5,final,state,parameter,cell_id\n"
+        params <- "state,iteration,value,parameter,cell_id\n"
         cat(params, file=out_params)
 
         metrics_cols <- c("multiplier","MSRSI_non_integerness","MBRSI_dispersion_non_integerness",
