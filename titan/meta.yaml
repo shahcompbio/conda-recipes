@@ -3,7 +3,7 @@ package:
   version: 1.10.0
 source:
   fn: TitanCNA_1.10.0.tar.gz
-  url: http://www.bioconductor.org/packages/release/bioc/src/contrib/TitanCNA_1.10.0.tar.gz
+  url: https://bioconductor.riken.jp/packages/3.3/bioc/src/contrib/TitanCNA_1.10.0.tar.gz
 build:
   number: 2
   rpaths:
@@ -15,6 +15,7 @@ requirements:
     - 'bioconductor-iranges'
     - 'bioconductor-rsamtools'
     - 'bioconductor-genomeinfodb'
+    - 'bioconductor-snpchip'      
     - 'r-foreach'
     - 'r-argparse'
     - 'r-domc'
@@ -25,6 +26,7 @@ requirements:
     - 'bioconductor-iranges'
     - 'bioconductor-rsamtools'
     - 'bioconductor-genomeinfodb'
+    - 'bioconductor-snpchip'
     - 'r-foreach'
     - 'r-argparse'
     - 'r-domc'
@@ -38,8 +40,6 @@ test:
     - '$R -e "library(''TitanCNA'')"'
     - 'createTITANsegmentfiles.pl -h | cat'
     - 'parse_titan_segments.py -h'
-    - 'run_titan.R -h | grep usage'
-    - 'plot_titan_chromosome.R -h | grep usage'
 about:
   home: http://bioconductor.org/packages/HMMcopy/
   summary: 'Corrects GC and mappability biases for readcounts (i.e. coverage) in non-overlapping windows of fixed length

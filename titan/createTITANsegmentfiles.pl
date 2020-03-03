@@ -48,9 +48,6 @@ if($help) {
 }
 print "Parameters:\nid=$id\ninfile=$infile\noutfile=$outfile\noutIGV=$outIGV\n";
 
-my ($name,$path,$suffix) = fileparse($infile);
-my @jnk;
-($id,@jnk) = split(/\_/,$name) if ~defined($id);
 my $nameOut = $id;
 
 open OUTFILE, ">$outfile" || die("Cannot write to $outfile\n");

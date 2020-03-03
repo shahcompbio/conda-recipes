@@ -5,7 +5,7 @@
 mv DESCRIPTION DESCRIPTION.old
 grep -v '^Priority: ' DESCRIPTION.old > DESCRIPTION
 #
-$R CMD INSTALL --build .
+R CMD INSTALL --build .
 #
 # # Add more build steps here, if they are necessary.
 #
@@ -23,9 +23,9 @@ chmod a+x $PREFIX/bin/createTITANsegmentfiles.pl
 cp $RECIPE_DIR/parse_titan_segments.py $PREFIX/bin
 chmod a+x $PREFIX/bin/parse_titan_segments.py
 
-cp $RECIPE_DIR/run_titan.R $PREFIX/bin
-chmod a+x $PREFIX/bin/run_titan.R
+cp $RECIPE_DIR/titan.R $PREFIX/bin
+chmod a+x $PREFIX/bin/titan.R
 
-cp $RECIPE_DIR/plot_titan_chromosome.R $PREFIX/bin
-chmod a+x $PREFIX/bin/plot_titan_chromosome.R
+cp $RECIPE_DIR/plot_titan.R $PREFIX/bin
+chmod a+x $PREFIX/bin/plot_titan.R
 
