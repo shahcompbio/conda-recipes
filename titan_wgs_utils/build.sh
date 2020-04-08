@@ -14,6 +14,3 @@ R CMD INSTALL --build .
 # for a list of environment variables that are set during the build
 # process.
 # 
-
-# Install custom scripts for running titan
-git clone https://github.com/shahcompbio/titan_wgs_utils.git
