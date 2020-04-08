@@ -11,35 +11,14 @@ build:
     - lib/
 requirements:
   build:
-    - 'bioconductor-hmmcopy'
-    - 'bioconductor-iranges'
-    - 'bioconductor-rsamtools'
-    - 'bioconductor-genomeinfodb'
-    - 'bioconductor-snpchip'      
-    - 'r-foreach'
-    - 'r-argparse'
-    - 'r-domc'
-    - 'r >=3.1.0'
-    - perl >=5.22.0
   run:
-    - 'bioconductor-hmmcopy'
-    - 'bioconductor-iranges'
-    - 'bioconductor-rsamtools'
-    - 'bioconductor-genomeinfodb'
-    - 'bioconductor-snpchip'
-    - 'r-foreach'
-    - 'r-argparse'
-    - 'r-domc'
-    - 'r >=3.1.0'
-    - python
-    - perl >=5.22.0
-    - numpy
-    - pandas
 test:
   commands:
-    - '$R -e "library(''TitanCNA'')"'
-    - 'createTITANsegmentfiles.pl -h | cat'
-    - 'parse_titan_segments.py -h'
+    - '[[ -f correctReads.R ]] && echo "This file exists"'
+    - '[[ -f createTITANsegmentfiles.pl ]] && echo "This file exists"'
+    - '[[ -f parse_titan_segments.py ]] && echo "This file exists"'
+    - '[[ -f  plot_titan.R ]] && echo "This file exists"'
+    - '[[ -f titan.R ]] && echo "This file exists"'
 about:
-  home: http://bioconductor.org/packages/HMMcopy/
+  home: http://bioconductor.org/packages/TitanCNA/
   summary: 'Utility scripts for titan.'

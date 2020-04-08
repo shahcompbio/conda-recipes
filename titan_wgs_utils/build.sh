@@ -16,16 +16,4 @@ R CMD INSTALL --build .
 # 
 
 # Install custom scripts for running titan
-mkdir -p $PREFIX/bin
-cp $RECIPE_DIR/createTITANsegmentfiles.pl $PREFIX/bin
-chmod a+x $PREFIX/bin/createTITANsegmentfiles.pl
-
-cp $RECIPE_DIR/parse_titan_segments.py $PREFIX/bin
-chmod a+x $PREFIX/bin/parse_titan_segments.py
-
-cp $RECIPE_DIR/titan.R $PREFIX/bin
-chmod a+x $PREFIX/bin/titan.R
-
-cp $RECIPE_DIR/plot_titan.R $PREFIX/bin
-chmod a+x $PREFIX/bin/plot_titan.R
-
+git clone https://github.com/shahcompbio/titan_wgs_utils.git
