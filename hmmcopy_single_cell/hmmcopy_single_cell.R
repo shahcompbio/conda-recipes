@@ -53,9 +53,9 @@ error_exit_clean <- function(samp.uncorrected, chromosomes, sample_id, out_reads
         samp.uncorrected$cell_id <- sample_id
         samp.uncorrected$cor_gc <- NA
         samp.uncorrected$cor_map <- NA
-        samp.uncorrected$ideal <- NA
-        samp.uncorrected$valid <- NA
-        samp.uncorrected$state <- NA
+        samp.uncorrected$ideal <- FALSE
+        samp.uncorrected$valid <- FALSE
+        samp.uncorrected$state <- -1
         samp.uncorrected$copy <- NA
         samp.uncorrected$multiplier <- multiplier
 
@@ -83,6 +83,10 @@ error_exit_clean <- function(samp.uncorrected, chromosomes, sample_id, out_reads
         colnames(metrics) <- metrics_cols
         metrics$cell_id <- sample_id
         metrics$multiplier <- multiplier
+	metrics$empty_bins_hmmcopy <- 0
+	metrics$total_mapped_reads_hmmcopy <- 0
+	metrics$breakpoints <- 0
+	metrics$state_mode <- 0
         write.table(metrics, file=out_metrics, quote=F, sep=",", col.names=T, row.names=F)
 }
 
