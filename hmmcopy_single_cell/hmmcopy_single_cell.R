@@ -95,7 +95,7 @@ error_exit_clean <- function(samp.uncorrected, chromosomes, sample_id, out_reads
 run_hmmcopy <- function(cell, corrected_reads_data, param, outdir, multipliers, verbose=FALSE) {
 
     samp.corrected <- fread(corrected_reads_data)
-    samp.corrected <- RangedData(ranges = IRanges(start=samp.corrected$start, end=samp.corrected$end), space=samp.corrected$chr,
+    samp.corrected <- data.table(start=samp.corrected$start, end=samp.corrected$end, chr=samp.corrected$chr,
                                  reads=samp.corrected$reads, gc=samp.corrected$gc, map=samp.corrected$map,
                                  cor_gc=samp.corrected$cor_gc, copy=samp.corrected$copy, valid=samp.corrected$valid, ideal=samp.corrected$ideal,
                                  modal_curve=samp.corrected$modal_curve,modal_quantile=samp.corrected$modal_quantile, cor_map=samp.corrected$cor_map)
@@ -190,7 +190,7 @@ run_hmmcopy <- function(cell, corrected_reads_data, param, outdir, multipliers, 
         )
 
         test.df <- as.data.frame(test.corrected)
-        rleseg <- rle(paste0(test.df$space, ":", test.corrected$state))
+        rleseg <- rle(paste0(test.df$chr, ":", test.corrected$state))
         test.df$median <- rep(modal_seg$median, rleseg$lengths)
         test.df$halfiness <- -log2(abs(pmin(abs(test.df$median - test.df$state), 0.499) - 0.5)) - 1
         stats2 <- ddply(subset(test.df, ideal), .(multiplier), summarise,
@@ -344,6 +344,7 @@ chromosomes <- c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", 
 param <- get_parameters(opt$param_str, opt$param_e, opt$param_mu, opt$param_l, opt$param_nu, opt$param_k, opt$param_m, opt$param_eta, opt$param_g, opt$param_s)
 
 run_hmmcopy(opt$sample_id, opt$corrected_data, param, opt$outdir, opt$param_multiplier)
+
 
 
 
