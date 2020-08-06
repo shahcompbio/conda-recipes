@@ -1,0 +1,34 @@
+package:
+  name: single_cell_pipeline_qc
+  version: '0.6.14'
+
+# source:
+#   git_url: https://github.com/shahcompbio/single_cell_pipeline.git
+#   git_rev: v0.6.14
+build:
+  number: 2
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - 'r >=3.1.0'
+    - 'r-tidyverse'
+    - 'r-data.table'
+    - 'r-rmarkdown'
+  run:
+    - 'r >=3.1.0'
+    - 'r-tidyverse'
+    - 'r-data.table'
+    - 'r-rmarkdown'
+test:
+  commands:
+    - 'R -e "library(tidyverse)"'
+    - 'R -e "library(data.table)"'
+    - 'R -e "library(rmarkdown)"'
+
+
+about:
+  home: http://shahlab.ca
+  summary: ''
+
