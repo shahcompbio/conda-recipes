@@ -1,6 +1,6 @@
 package:
-  name: single_cell_pipeline_qc
-  version: '0.6.14'
+  name: wgs_qc_html
+  version: '0.0.1'
 build:
   number: 2
   rpaths:
@@ -9,18 +9,12 @@ build:
 requirements:
   build:
     - 'r >=3.1.0'
-    - 'r-tidyverse'
-    - 'r-data.table'
     - 'r-rmarkdown'
   run:
     - 'r >=3.1.0'
-    - 'r-tidyverse'
-    - 'r-data.table'
     - 'r-rmarkdown'
 test:
   commands:
-    - 'R -e "library(tidyverse)"'
-    - 'R -e "library(data.table)"'
     - 'R -e "library(rmarkdown)"'
 
 

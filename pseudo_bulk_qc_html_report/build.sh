@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bashls
 
 
 # Install custom scripts for running qc
