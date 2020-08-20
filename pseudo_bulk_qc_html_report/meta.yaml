@@ -1,6 +1,6 @@
 package:
-  name: single_cell_pipeline_qc
-  version: '0.6.14'
+  name: pseudo_bulk_qc_html_report
+  version: '0.0.1'
 build:
   number: 2
   rpaths:
