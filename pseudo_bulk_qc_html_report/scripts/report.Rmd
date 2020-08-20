@@ -14,8 +14,12 @@ params:
   snv_genome_count_png: ""
   snv_cell_counts_png: ""
   snv_alt_counts_png: ""
-  rearranegementtype_distribution_png: ""
-  chromosome_types_png: ""
+  rearranegementtype_distribution_destruct_unfiltered_png: ""
+  chromosome_types_destruct_unfiltered_png: ""
+  rearranegementtype_distribution_destruct_filtered_png: ""
+  chromosome_types_destruct_filtered_png: ""
+  rearranegementtype_distribution_lumpy_unfiltered_png: ""
+  chromosome_types_lumpy_unfiltered_png: ""
   BAFplot_png: ""
   datatype_summary_csv: ""
   maf: ""
@@ -175,13 +179,42 @@ include_graphics(params$BAFplot_png)
 
 # Structural variation
 
-## Distribution of rearrangement types
-```{r breakpointdistribution, echo = FALSE}
+## Distribution of rearrangement types in unfiltered destruct
+```{r breakpointdistribution du, echo = FALSE}
 # All defaults
-include_graphics(params$rearranegementtype_distribution_png)
+include_graphics(params$rearranegementtype_distribution_destruct_unfiltered_png)
 ```
-##rearrangement types across the genome
-```{r chromosometypes, echo = FALSE}
+
+
+## Distribution of rearrangement types in unfiltered destruct across the genome
+```{r breakpointdistribution genome du, echo = FALSE}
 # All defaults
-include_graphics(params$chromosome_types_png)
+include_graphics(params$chromosome_types_destruct_unfiltered_png)
 ```
+
+## Distribution of rearrangement types unfiltered lumpy
+```{r breakpointdistribution df, echo = FALSE}
+# All defaults
+include_graphics(params$rearranegementtype_distribution_lumpy_unfiltered_png)
+```
+
+
+## Distribution of rearrangement types in unfiltered lumpy across the genome
+```{r breakpointdistribution genome df, echo = FALSE}
+# All defaults
+include_graphics(params$chromosome_types_lumpy_unfiltered_png)
+```
+
+## Distribution of rearrangement types filtered destruct
+```{r breakpointdistribution  lu, echo = FALSE}
+# All defaults
+include_graphics(params$rearranegementtype_distribution_destruct_filtered_png)
+```
+
+
+## Distribution of rearrangement types in filtered destruct across the genome
+```{r breakpointdistribution genome lu, echo = FALSE}
+# All defaults
+include_graphics(params$chromosome_types_destruct_filtered_png)
+```
+
