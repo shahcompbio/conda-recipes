@@ -14,12 +14,9 @@ params:
   snv_genome_count_png: ""
   snv_cell_counts_png: ""
   snv_alt_counts_png: ""
-  rearranegementtype_distribution_destruct_unfiltered_png: ""
-  chromosome_types_destruct_unfiltered_png: ""
-  rearranegementtype_distribution_destruct_filtered_png: ""
-  chromosome_types_destruct_filtered_png: ""
-  rearranegementtype_distribution_lumpy_unfiltered_png: ""
-  chromosome_types_lumpy_unfiltered_png: ""
+  destruct_rearrangement_plots_unfiltered: ""
+  destruct_rearrangement_plots_filtered: ""
+  lumpy_rearrangement_plots_unfiltered: ""
   BAFplot_png: ""
   datatype_summary_csv: ""
   maf: ""
@@ -67,26 +64,33 @@ Number of mutations per chromosome:
 
 ```{r perchr, fig.height = 3, fig.width = 10, echo = FALSE}
 # All defaults
-snvs <- read.csv(params$snvs_all_csv)
-chridx <- data.frame(chrom = c(paste0(1:22), "X", "Y"), idx = seq(1:24))
-snvs %>%
-  left_join(., chridx) %>%
-  group_by(chrom, idx) %>%
-  summarize(n = n()) %>%
-  ggplot(aes(x = forcats::fct_reorder(chrom, idx), y = n)) +
-  geom_bar(stat = "identity", fill = "plum4", width = 0.75) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  xlab("Chromosome") + ylab("Counts") + theme_classic()
+snvs <- read.csv(params$snvs_all_csv, colClasses=c("chrom"= "character"))
+if (nrow(snvs) == 0){
+  print("data is empty")
+} else{
+  chromosomes = unique(snvs$chrom)
+  chridx <- data.frame(chrom = chromosomes, idx = seq(1:length(chromosomes)))
+  snvs %>%
+    left_join(., chridx) %>%
+    group_by(chrom, idx) %>%
+    summarize(n = n()) %>%
+    #forcats::fct_reorder(chrom, idx)
+    ggplot(aes(x = forcats::fct_reorder(chrom, idx), y = n)) +
+    geom_bar(stat = "identity", fill = "plum4", width = 0.75) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    xlab("Chromosome") + ylab("Counts") + theme_classic()
+}
+
 ```
 
 ## Rainfall plot
-```{r adjdist, echo = FALSE}
+```{r adjdist, echo = FALSE, out.width = "100%", out.height = "300",}
 # All defaults
 include_graphics(params$snv_adjacent_distance_png)
 ```
 
 ## SNV density
-```{r genomecount, echo = FALSE}
+```{r genomecount, echo = FALSE, out.width = "100%", out.height = "300",}
 # All defaults
 include_graphics(params$snv_genome_count_png)
 ```
@@ -174,47 +178,21 @@ include_graphics(params$cn_plot_png)
 ```{r BAFplot, echo = FALSE}
 # All defaultp
 include_graphics(params$BAFplot_png)
-
 ```
 
 # Structural variation
-
-## Distribution of rearrangement types in unfiltered destruct
-```{r breakpointdistribution du, echo = FALSE}
+## Destruct Unfiltered
+```{r destruct-unfilt, out.width = "100%", out.height = "700px", echo = FALSE }
 # All defaults
-include_graphics(params$rearranegementtype_distribution_destruct_unfiltered_png)
+include_graphics(params$destruct_rearrangement_plots_unfiltered)
 ```
-
-
-## Distribution of rearrangement types in unfiltered destruct across the genome
-```{r breakpointdistribution genome du, echo = FALSE}
+## Destruct Filtered
+```{r destruct-filt , echo = FALSE, out.width = "100%", out.height = "900",}
 # All defaults
-include_graphics(params$chromosome_types_destruct_unfiltered_png)
+include_graphics(params$destruct_rearrangement_plots_filtered)
 ```
-
-## Distribution of rearrangement types unfiltered lumpy
-```{r breakpointdistribution df, echo = FALSE}
+## Lumpy Unfiltered
+```{r lumpy-unfilt, echo = FALSE, out.width = "100%", out.height = "900",}
 # All defaults
-include_graphics(params$rearranegementtype_distribution_lumpy_unfiltered_png)
+include_graphics(params$lumpy_rearrangement_plots_unfiltered)
 ```
-
-
-## Distribution of rearrangement types in unfiltered lumpy across the genome
-```{r breakpointdistribution genome df, echo = FALSE}
-# All defaults
-include_graphics(params$chromosome_types_lumpy_unfiltered_png)
-```
-
-## Distribution of rearrangement types filtered destruct
-```{r breakpointdistribution  lu, echo = FALSE}
-# All defaults
-include_graphics(params$rearranegementtype_distribution_destruct_filtered_png)
-```
-
-
-## Distribution of rearrangement types in filtered destruct across the genome
-```{r breakpointdistribution genome lu, echo = FALSE}
-# All defaults
-include_graphics(params$chromosome_types_destruct_filtered_png)
-```
-
