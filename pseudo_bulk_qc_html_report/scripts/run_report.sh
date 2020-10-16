@@ -7,5 +7,5 @@ mutations_per_cell_png='$3', summary_csv='$4', snvs_high_impact_csv='$5',
 snvs_all_csv='$6', trinuc_csv='$7', snv_adjacent_distance_png='$8', snv_genome_count_png='$9', 
 snv_cell_counts_png='${10}', snv_alt_counts_png='${11}',destruct_rearrangement_plots_unfiltered='${12}',
 destruct_rearrangement_plots_filtered='${13}', lumpy_rearrangement_plots_unfiltered='${14}',
-BAFplot_png='${15}', cn_plot_png='${16}', datatype_summary_csv='${17}', 
-maf='${18}'))"
+BAFplot_png='${15}', cn_plot_png='${16}', brk_cna_overlap_results='${17}', datatype_summary_csv='${18}', 
+maf='${19}'))"

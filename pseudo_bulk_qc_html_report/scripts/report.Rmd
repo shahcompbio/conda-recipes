@@ -5,6 +5,7 @@ output:
 params:
   sample_id: ""
   cn_plot_png: ""
+  brk_cna_overlap_results: ""
   mutations_per_cell_png: ""
   summary_csv: ""
   snvs_high_impact_csv: ""
@@ -195,4 +196,11 @@ include_graphics(params$destruct_rearrangement_plots_filtered)
 ```{r lumpy-unfilt, echo = FALSE, out.width = "100%", out.height = "900",}
 # All defaults
 include_graphics(params$lumpy_rearrangement_plots_unfiltered)
+```
+
+
+## brk_cna_overlap_results
+```{r brk_cna_overlap_results, echo = FALSE, out.width = "100%", out.height = "900",}
+# All defaults
+include_graphics(params$brk_cna_overlap_results)
 ```
