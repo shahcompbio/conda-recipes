@@ -103,6 +103,8 @@ run_hmmcopy <- function(cell, corrected_reads_data, param, outdir, multipliers, 
 
     VALS = as.numeric(strsplit(multipliers, ",")[[1]])
 
+    samp.corrected <- samp.corrected[order(samp.corrected$chr, samp.corrected$start), ]
+
     check.samp.corrected <- samp.corrected
     check.samp.corrected$copy[!check.samp.corrected$ideal] <- NaN
 
