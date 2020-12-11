@@ -30,4 +30,6 @@ test:
     - 'R -e "library(maftools)"'
 
 about:
-  home: h
+  home: http://shahlab.ca
+  summary: ''
+
