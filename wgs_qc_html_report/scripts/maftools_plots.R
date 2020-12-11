@@ -11,15 +11,25 @@ oncoplot = function(read_maf, oncoplot_path, genes){
 }
 
 maf_summary = function(read_maf, maf_summary_path){
-    png(filename=maf_summary_path, units="px", width=1600, height=1600, res=300)
-    maftools::plotmafSummary(maf = read_maf, rmOutlier = TRUE, addStat = 'median', dashboard = TRUE, titvRaw = FALSE)
-    dev.off()
+        png(filename=maf_summary_path, units="px", width=1600, height=1600, res=300)
+        plot.new()
+        dev.off()
+    try({ 
+        png(filename=maf_summary_path, units="px", width=1600, height=1600, res=300)
+        maftools::plotmafSummary(maf = read_maf, rmOutlier = TRUE, addStat = 'median', dashboard = TRUE, titvRaw = FALSE)
+        dev.off()
+    })
 }
 
 somatic_interaction_plot = function(read_maf, somatic_interaction_plot_path){
-    png(filename=somatic_interaction_plot_path, units="px", width=1600, height=1600, res=300)
-    maftools::somaticInteractions(maf = read_maf, top=15, pvalue = c(0.05, 0.1))
-    dev.off()
+        png(filename=somatic_interaction_plot_path, units="px", width=1600, height=1600, res=300)
+        plot.new()
+        dev.off()
+    try({ 
+        png(filename=somatic_interaction_plot_path, units="px", width=1600, height=1600, res=300)
+        maftools::somaticInteractions(maf = read_maf, top=15, pvalue = c(0.05, 0.1))
+        dev.off()
+    })
 }
 
 
@@ -41,7 +51,6 @@ main = function(){
     
     oncoplot(maf, oncoplot_path, genes)
     maf_summary(maf, mafsummary)
-
     somatic_interaction_plot(maf, somatic_interactions)
 
 
@@ -49,4 +58,5 @@ main = function(){
 
 
 main()
+
 
