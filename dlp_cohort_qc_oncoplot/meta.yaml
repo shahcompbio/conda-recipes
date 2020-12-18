@@ -1,0 +1,31 @@
+package:
+  name: wgs_qc_html
+  version: '0.0.1'
+source:
+  fn: maftools_2.7.0.tar.gz
+  url:
+    - https://www.bioconductor.org/packages/devel/bioc/src/contrib/maftools_2.7.0.tar.gz
+build:
+  number: 2
+  rpaths:
+    - lib/R/lib/
+    - lib/
+requirements:
+  build:
+    - r
+    - r-data.table
+    - r-rcolorbrewer
+
+  run:
+    - r >=3.3.0
+    - r-data.table
+    - r-rcolorbrewer
+
+test:
+  commands:
+    - 'R -e "library(maftools)"'
+
+about:
+  home: http://shahlab.ca
+  summary: ''
+
