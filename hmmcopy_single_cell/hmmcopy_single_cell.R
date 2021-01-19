@@ -59,7 +59,7 @@ error_exit_clean <- function(samp.uncorrected, chromosomes, sample_id, out_reads
         samp.uncorrected$copy <- NA
         samp.uncorrected$multiplier <- multiplier
 
-        colorder <- c("chr","start","end","width","reads","gc","map","cor_gc","copy","valid","ideal","modal_curve","modal_quantile","cor_map","multiplier","state","cell_id")
+        colorder <- c("chr","start","end","reads","gc","map","cor_gc","copy","valid","ideal","modal_curve","modal_quantile","cor_map","multiplier","state","cell_id")
         setcolorder(samp.uncorrected, colorder)
 
         write.table(samp.uncorrected, file=out_reads, quote=F, sep=",", col.names=T, row.names=F)
