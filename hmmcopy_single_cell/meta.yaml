@@ -3,7 +3,7 @@ package:
   version: 1.30.0
 source:
   fn: HMMcopy_1.30.0.tar.gz
-  url: https://bioconductor.org/packages/release/bioc/src/contrib/HMMcopy_1.30.0.tar.gz
+  url: https://bioconductor.org/packages/3.11/bioc/src/contrib/HMMcopy_1.30.0.tar.gz
 build:
   number: 2
   rpaths:
