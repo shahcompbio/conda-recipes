@@ -11,11 +11,11 @@ build:
     - lib/
 requirements:
   build:
-    - 'r >=3.1.0'
+    - 'r >=4.0.0'
     - 'r-data.table'
     - 'r-reshape2'
   run:
-    - 'r >=3.1.0'
+    - 'r >=4.0.0'
     - 'r-data.table'
     - 'r-reshape2'
     - 'r-getopt'
