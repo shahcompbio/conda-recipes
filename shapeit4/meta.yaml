@@ -17,11 +17,11 @@ requirements:
     - make
     - {{ compiler('cxx') }}
   host:
-    - boost-cpp
+    - boost-cpp=1.73.0
     - bzip2
     - htslib=1.11
   run:
-    - boost-cpp
+    - boost-cpp=1.73.0
     - bzip2
     - htslib=1.11
 
